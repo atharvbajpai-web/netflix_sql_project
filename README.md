@@ -1,15 +1,15 @@
-# 🎬 Netflix Content Analysis — SQL Project
+#  Netflix Content Analysis — SQL Project
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-Data%20Analysis-orange?style=for-the-badge)
 
-## 📖 Overview
+##  Overview
 
 This project explores the Netflix content library using **PostgreSQL** to answer 15 real-world business questions. The analysis covers content distribution, ratings, genres, directors, cast members, and more — showcasing practical SQL skills including CTEs, window functions, aggregations, and conditional logic.
 
 ---
 
-## 🗃️ Dataset
+##  Dataset
 
 The dataset used is the publicly available **Netflix Movies and TV Shows** dataset, stored in a table called `netflix`.
 
@@ -66,8 +66,4 @@ The dataset used is the publicly available **Netflix Movies and TV Shows** datas
 
 Contributions and improvements are welcome! Feel free to fork the repo, add new queries, and open a pull request.
 
----
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
