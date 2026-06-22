@@ -1,10 +1,123 @@
-# Netflix TV Shows and Movies Data Analysis using SQL
+# 🎬 Netflix Content Analysis — SQL Project
 
-## Overview
-This project involves a comprehensive analysis of Netflix's movies and TV shows data using SQL. The goal is to extract valuable insights and answer various business questions based on the dataset. The following README provides a detailed account of the project's objectives, business problems, solutions, findings, and conclusions.
-## Objectives
-1.Analyze the distribution of content types (movies vs TV shows).
-2.Identify the most common ratings for movies and TV shows.
-3.List and analyze content based on release years, countries, and durations.
-4.Explore and categorize content based on specific criteria and keywords.
-## Dataset link : https://www.kaggle.com/datasets/rahulvyasm/netflix-movies-and-tv-shows
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-Data%20Analysis-orange?style=for-the-badge)
+
+## 📖 Overview
+
+This project explores the Netflix content library using **PostgreSQL** to answer 15 real-world business questions. The analysis covers content distribution, ratings, genres, directors, cast members, and more — showcasing practical SQL skills including CTEs, window functions, aggregations, and conditional logic.
+
+---
+
+## 🗃️ Dataset
+
+The dataset used is the publicly available **Netflix Movies and TV Shows** dataset, stored in a table called `netflix`.
+
+| Column | Description |
+|---|---|
+| `show_id` | Unique identifier for each title |
+| `type` | Movie or TV Show |
+| `title` | Name of the content |
+| `director` | Director(s) of the content |
+| `casts` | Cast members |
+| `country` | Country of production |
+| `date_added` | Date added to Netflix |
+| `release_year` | Year of release |
+| `rating` | Content rating (e.g., PG-13, TV-MA) |
+| `duration` | Duration (minutes for movies, seasons for TV shows) |
+| `listed_in` | Genre/category |
+| `description` | Brief description of the content |
+
+---
+
+## ❓ Business Problems Solved
+
+| # | Question |
+|---|---|
+| 1 | Count the number of Movies vs TV Shows |
+| 2 | Find the most common rating for Movies and TV Shows |
+| 3 | List all movies released in a specific year (e.g., 2020) |
+| 4 | Identify the longest movie |
+| 5 | Find all Movies/TV Shows by director **Rajiv Chilaka** |
+| 6 | List all TV Shows with more than 5 seasons |
+| 7 | List all movies that are documentaries |
+| 8 | Find all content without a director |
+| 9 | Find how many movies actor **Salman Khan** appeared in over the last 10 years |
+| 10 | Find the top 5 years with the highest number of content releases |
+| 11 | Count titles categorized under "International" content |
+| 12 | Find all titles containing the word "Love" |
+| 13 | Find the 10 oldest Movies or TV Shows |
+| 14 | Which countries produce more TV Shows than Movies? |
+| 15 | Categorize content as 'Bad' (contains "kill"/"violence") or 'Good' and count each |
+
+---
+
+## 💡 Key SQL Concepts Used
+
+- **CTEs** (`WITH` clauses) for multi-step logic
+- **Window Functions** (`RANK() OVER PARTITION BY`) for ranking within groups
+- **Aggregate Functions** (`COUNT`, `SUM`, `MAX`)
+- **Conditional Aggregation** (`CASE WHEN`)
+- **Pattern Matching** (`LIKE`, `ILIKE`)
+- **Subqueries** for filtering against derived values
+- **Date Functions** (`EXTRACT(YEAR FROM CURRENT_DATE)`)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- PostgreSQL installed (v12 or higher recommended)
+- The Netflix dataset loaded into a table named `netflix`
+
+### Running the Queries
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/netflix-sql-project.git
+   cd netflix-sql-project
+   ```
+
+2. Connect to your PostgreSQL instance:
+   ```bash
+   psql -U your_username -d your_database
+   ```
+
+3. Load the SQL file:
+   ```bash
+   \i netflix_project_postgres.sql
+   ```
+
+---
+
+## 📂 Project Structure
+
+```
+netflix-sql-project/
+│
+├── netflix_project_postgres.sql   # All 15 queries with comments
+└── README.md                      # Project documentation
+```
+
+---
+
+## 📊 Sample Insights
+
+- **Most content** on Netflix tends to be Movies rather than TV Shows.
+- The **most common ratings** differ between Movies and TV Shows, reflecting different audience targets.
+- A significant portion of Netflix content is tagged as **International**, reflecting the platform's global reach.
+- Countries like **South Korea and Japan** often produce more TV Shows than Movies on Netflix.
+- Content with keywords like **"kill"** or **"violence"** in descriptions can be flagged for audience filtering.
+
+---
+
+## 🤝 Contributing
+
+Contributions and improvements are welcome! Feel free to fork the repo, add new queries, and open a pull request.
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
