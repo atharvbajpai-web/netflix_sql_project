@@ -11,7 +11,7 @@ This project involves a comprehensive analysis of Netflix's movies and TV shows 
 
        
 ## -- 15 Business Problems & Solutions
--- 1. Count the number of Movies vs TV Shows
+## -- 1. Count the number of Movies vs TV Shows
 SELECT
 	TYPE,
 	COUNT(*)
