@@ -30,7 +30,7 @@ The dataset used is the publicly available **Netflix Movies and TV Shows** datas
 
 ---
 
-## ❓ Business Problems Solved
+##  Business Problems Solved
 
 | # | Question |
 |---|---|
@@ -50,59 +50,9 @@ The dataset used is the publicly available **Netflix Movies and TV Shows** datas
 | 14 | Which countries produce more TV Shows than Movies? |
 | 15 | Categorize content as 'Bad' (contains "kill"/"violence") or 'Good' and count each |
 
----
 
-## 💡 Key SQL Concepts Used
 
-- **CTEs** (`WITH` clauses) for multi-step logic
-- **Window Functions** (`RANK() OVER PARTITION BY`) for ranking within groups
-- **Aggregate Functions** (`COUNT`, `SUM`, `MAX`)
-- **Conditional Aggregation** (`CASE WHEN`)
-- **Pattern Matching** (`LIKE`, `ILIKE`)
-- **Subqueries** for filtering against derived values
-- **Date Functions** (`EXTRACT(YEAR FROM CURRENT_DATE)`)
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- PostgreSQL installed (v12 or higher recommended)
-- The Netflix dataset loaded into a table named `netflix`
-
-### Running the Queries
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-username/netflix-sql-project.git
-   cd netflix-sql-project
-   ```
-
-2. Connect to your PostgreSQL instance:
-   ```bash
-   psql -U your_username -d your_database
-   ```
-
-3. Load the SQL file:
-   ```bash
-   \i netflix_project_postgres.sql
-   ```
-
----
-
-## 📂 Project Structure
-
-```
-netflix-sql-project/
-│
-├── netflix_project_postgres.sql   # All 15 queries with comments
-└── README.md                      # Project documentation
-```
-
----
-
-## 📊 Sample Insights
+##  Sample Insights
 
 - **Most content** on Netflix tends to be Movies rather than TV Shows.
 - The **most common ratings** differ between Movies and TV Shows, reflecting different audience targets.
@@ -112,7 +62,7 @@ netflix-sql-project/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions and improvements are welcome! Feel free to fork the repo, add new queries, and open a pull request.
 
