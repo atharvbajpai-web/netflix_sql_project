@@ -20,7 +20,7 @@ FROM
 GROUP BY
 	TYPE;
 
--- 2. Find the most common rating for movies and TV shows
+## -- 2. Find the most common rating for movies and TV shows
 WITH
 	RATING_COUNT AS (
 		SELECT
@@ -55,7 +55,7 @@ FROM
 WHERE
 	RANK_ = 1;
 
--- 3. List all movies released in a specific year (e.g., 2020)
+## -- 3. List all movies released in a specific year (e.g., 2020)
 SELECT
 	TITLE,
 	RELEASE_YEAR
@@ -65,7 +65,7 @@ WHERE
 	RELEASE_YEAR = 2020
 	AND 'Movie' IN (TYPE);
 
--- 4. Identify the longest movie
+## -- 4. Identify the longest movie
 SELECT
 	TYPE,
 	DURATION
@@ -79,7 +79,7 @@ WHERE
 			NETFLIX
 	);
 
--- 5. Find all the movies/TV shows by director 'Rajiv Chilaka'!
+## -- 5. Find all the movies/TV shows by director 'Rajiv Chilaka'!
 SELECT
 	*
 FROM
@@ -87,7 +87,7 @@ FROM
 WHERE
 	DIRECTOR LIKE '%Rajiv Chilaka%';
 
--- 6. List all TV shows with more than 5 seasons
+## -- 6. List all TV shows with more than 5 seasons
 SELECT
 	*
 FROM
@@ -97,7 +97,7 @@ WHERE
 	AND DURATION > '5 seasons';
 
 
--- 7. List all movies that are documentaries
+## -- 7. List all movies that are documentaries
 SELECT
 	*
 FROM
@@ -106,7 +106,7 @@ WHERE
 	TYPE = 'Movie'
 	AND LISTED_IN ILIKE '%Documentaries%';
 
--- 8. Find all content without a director
+## -- 8. Find all content without a director
 SELECT
 	*
 FROM
@@ -114,7 +114,7 @@ FROM
 WHERE
 	DIRECTOR IS NULL;
 
--- 9. Find how many movies actor 'Salman Khan' appeared in last 10 years!
+## -- 9. Find how many movies actor 'Salman Khan' appeared in last 10 years!
 SELECT
 	*
 FROM
@@ -127,7 +127,7 @@ WHERE
 			CURRENT_DATE) -10;
 			
 
---10. Find the top 5 years with the highest number of content releases
+## --10. Find the top 5 years with the highest number of content releases
 SELECT release_year, COUNT(*) AS total
 FROM netflix
 GROUP BY release_year
@@ -135,7 +135,7 @@ ORDER BY total DESC
 LIMIT 5;
 
 
---11. How many titles are categorized under "International" content (listed_in contains "International"
+## --11. How many titles are categorized under "International" content (listed_in contains "International"
 SELECT type, COUNT(*) AS international_titles
 FROM netflix
 WHERE listed_in LIKE '%International%'
@@ -143,20 +143,20 @@ GROUP BY type
 ORDER BY international_titles DESC;
 
 
---12. Find all titles that contain the word "Love" in the titles
+## --12. Find all titles that contain the word "Love" in the titles
 SELECT title, type, release_year
 FROM netflix
 WHERE title LIKE '%Love%'
 ORDER BY release_year DESC;
 
---13. Find the 10 oldest movies or TV Shows.
+## --13. Find the 10 oldest movies or TV Shows.
 SELECT title, release_year
 FROM netflix
 ORDER BY release_year
 LIMIT 10;
 
 
---14. Which countries produce more TV Shows than Movies?
+## --14. Which countries produce more TV Shows than Movies?
 WITH content_count AS (
     SELECT
         country,
@@ -172,7 +172,7 @@ FROM content_count
 WHERE tv_shows > movies
 ORDER BY tv_shows DESC;
 
---15. Categorize the content based on the presence of the keywords 'kill' and 'violence' in the description field.
+## --15. Categorize the content based on the presence of the keywords 'kill' and 'violence' in the description field.
 --Label content containing these keywords as 'Bad' and all other content as 'Good'. 
 --Count how many items fall into each category.
 
